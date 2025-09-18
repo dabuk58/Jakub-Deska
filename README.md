@@ -22,10 +22,12 @@ src/
 │ ├─ app.routes.ts
 │ ├─ core/
 │ │ ├─ models/
-│ │ ├─ models/
 │ │ │ ├─ post.model.ts
 │ │ │ ├─ user.model.ts
 │ │ │ └─ comment.model.ts
+│ │ ├─ components/
+│ │ │ ├─ header.component.ts
+│ │ │ └─ footer.component.ts
 │ │ └─ services/
 │ │ ├─ posts-api.service.ts
 │ │ └─ posts-store.service.ts
