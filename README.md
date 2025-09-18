@@ -16,6 +16,7 @@
 
 ## 1) Struktura katalogów
 
+```text
 src/
 ├─ app/
 │ ├─ app.config.ts
@@ -49,6 +50,7 @@ src/
 │ └─└─└─ post.page.ts
 ├─ styles.css
 └─ main.ts
+```
 
 ## 2) Lista komponentów
 
