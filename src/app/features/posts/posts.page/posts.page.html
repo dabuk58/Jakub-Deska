@@ -1,1 +1,12 @@
-<p>posts.page works!</p>
+<section class="space-y-4 flex flex-col items-center mt-4">
+  <app-posts-filters />
+  @if (store.loading()) {
+  <app-spinner></app-spinner>
+  } @else if(store.error(); as err){
+  <div class="p-3 rounded-md bg-red-50 text-red-700">{{ err }}</div>
+  } @else { @if(store.filteredPosts().length){
+  <app-posts-list></app-posts-list>
+  } @else {
+  <p class="text-sm">Brak wyników dla wybranych filtrów.</p>
+  } }
+</section>
