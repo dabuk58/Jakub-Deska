@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-spinner',
-  imports: [],
+  imports: [MatProgressSpinnerModule],
   templateUrl: './spinner.html',
-  styleUrl: './spinner.css'
+  styleUrl: './spinner.css',
 })
-export class Spinner {
-
-}
+export class Spinner {}
