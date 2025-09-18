@@ -1,1 +1,33 @@
-<p>posts-filters works!</p>
+<div class="grid md:grid-cols-[1fr_auto_auto_auto] md:gap-4 justify-items-center items-center">
+  <mat-form-field>
+    <mat-label>Szukaj</mat-label>
+    <input
+      matInput
+      [value]="store.filters().q"
+      (input)="onQuery($event.target.value)"
+      placeholder="np. sunt aut facere..."
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="w-full">
+    <mat-label>Użytkownik</mat-label>
+    <mat-select [value]="store.filters().userId ?? ''" (selectionChange)="onUserId($event.value)">
+      <mat-option [value]="''">Wszyscy</mat-option>
+      @for(id of userIds; track id){
+      <mat-option [value]="id">#{{ id }}</mat-option>
+      }
+    </mat-select>
+    <mat-icon matSuffix>person</mat-icon>
+  </mat-form-field>
+  <mat-checkbox
+    color="primary"
+    class="mb-3 md:mb-4"
+    [checked]="store.filters().onlyFav"
+    (change)="store.toggleOnlyFav()"
+  >
+    Tylko ulubione
+  </mat-checkbox>
+  <button mat-stroked-button type="button" class="max-md:w-full md:mb-4" (click)="reset()">
+    Reset
+  </button>
+</div>
